@@ -15,8 +15,6 @@ st.write(f"Mostrando véhiculos en condición: **{select_condition}**")
 st.dataframe(filtered_condition)
 
 
-select_condition = st.selectbox(
-    "Selecciona condición del véhiculo:", data_car['condition'].dropna().unique(), key="select_condition_2")
 filtered_condition = data_car[data_car['condition'] == select_condition]
 fig_price_hist = px.histogram(filtered_condition, x='price', nbins=50,
                               title=f'Distribución de Precios por Condicion: {select_condition}', labels={'price': 'Precio USD'}, color_discrete_sequence=['#ff7f0e'])
